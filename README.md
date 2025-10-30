@@ -15,8 +15,8 @@ This project provides a complete Docker setup for Oracle Database 12c SE2, inclu
 
 Before building this image, you need to download the Oracle Database 12c Release 1 Standard Edition 2 installation files:
 
-1. [linuxamd64_12102_database_se2_1of2.zip](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
-2. [linuxamd64_12102_database_se2_2of2.zip](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
+1. [linuxamd64_12102_database_se2_1of2.zip](https://1drv.ms/u/c/db2a753240da189e/EU7vsnXuDjBAtUL3UXO6-UIBMQqkc6JJatRHOlpE3LAG1Q)
+2. [linuxamd64_12102_database_se2_2of2.zip](https://1drv.ms/u/c/db2a753240da189e/EUf5wVhL2gNLm_w4JDYYM-UBARqQfku4aEU2m9bSRnwT5g)
 
 Place these files in the same directory as the Dockerfile.
 
@@ -51,7 +51,7 @@ docker run -d \
   -e ORACLE_PWD=12345 \
   -e ORACLE_CHARACTERSET=AL32UTF8 \
   -v oracle-data:/opt/oracle/oradata \
-  k8ngkiat/oracle-12c
+  oracle
 ```
 
 ## Configuration
@@ -125,18 +125,18 @@ docker inspect oracle | grep Health -A 10
 .
 ├── Dockerfile                 # Multi-stage Docker build configuration
 ├── docker-compose.yml         # Docker Compose configuration
-├── db_inst.rsp              # Database installation response file
-├── dbca.rsp.tmpl            # Database configuration assistant template
-├── checkDBStatus.sh         # Database health check script
-├── checkSpace.sh            # Disk space verification script
-├── createDB.sh              # Database creation script
-├── installDBBinaries.sh     # Database binaries installation script
-├── installPerl.sh           # Perl installation script
-├── runOracle.sh             # Main Oracle runtime script
-├── runUserScripts.sh        # User scripts execution script
-├── setPassword.sh           # Password configuration script
-├── setupLinuxEnv.sh         # Linux environment setup script
-└── startDB.sh               # Database startup script
+├── db_inst.rsp                # Database installation response file
+├── dbca.rsp.tmpl              # Database configuration assistant template
+├── checkDBStatus.sh           # Database health check script
+├── checkSpace.sh              # Disk space verification script
+├── createDB.sh                # Database creation script
+├── installDBBinaries.sh       # Database binaries installation script
+├── installPerl.sh             # Perl installation script
+├── runOracle.sh               # Main Oracle runtime script
+├── runUserScripts.sh          # User scripts execution script
+├── setPassword.sh             # Password configuration script
+├── setupLinuxEnv.sh           # Linux environment setup script
+└── startDB.sh                 # Database startup script
 ```
 
 ## Important Notes
