@@ -1,0 +1,20 @@
+services:
+  oracle:
+    container_name: oracle
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: k8ngkiat/oracle-12c
+    environment:
+      - ORACLE_SID=ORCLCDB
+      - ORACLE_PDB=ORCLPDB1
+      - ORACLE_PWD=12345
+      - ORACLE_CHARACTERSET=AL32UTF8
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+volumes:
+  oracle-data:
